@@ -4,7 +4,7 @@ import { useState } from "react";
 const NoteState = (props) => {
   const notesInitial = [
     {
-      _id: "645cdca823d5785bbf61663a",
+      _id: "645cdca823d5785bbf61663a1",
       user: "645ca18184c15866ab5550e7",
       title: "My Tittle",
       description: "My First test note added.",
@@ -13,7 +13,7 @@ const NoteState = (props) => {
       __v: 0,
     },
     {
-      _id: "645e364a85c013c8d36b060d",
+      _id: "645e364a85c013c8d36b060d2",
       user: "645ca18184c15866ab5550e7",
       title: "My Second Tittle",
       description: "My Second test note added.",
@@ -22,7 +22,7 @@ const NoteState = (props) => {
       __v: 0,
     },
     {
-      _id: "645e364a85c013c8d36b060d",
+      _id: "645e364a85c013c8d36b060d3",
       user: "645ca18184c15866ab5550e7",
       title: "My Second Tittle",
       description: "My Second test note added.",
@@ -31,7 +31,7 @@ const NoteState = (props) => {
       __v: 0,
     },
     {
-      _id: "645e364a85c013c8d36b060d",
+      _id: "645e364a85c013c8d36b060d4",
       user: "645ca18184c15866ab5550e7",
       title: "My Second Tittle",
       description: "My Second test note added.",
@@ -40,7 +40,7 @@ const NoteState = (props) => {
       __v: 0,
     },
     {
-      _id: "645e364a85c013c8d36b060d",
+      _id: "645e364a85c013c8d36b060d5",
       user: "645ca18184c15866ab5550e7",
       title: "My Second Tittle",
       description: "My Second test note added.",
@@ -49,7 +49,7 @@ const NoteState = (props) => {
       __v: 0,
     },
     {
-      _id: "645e364a85c013c8d36b060d",
+      _id: "645e364a85c013c8d36b060d6",
       user: "645ca18184c15866ab5550e7",
       title: "My Second Tittle",
       description: "My Second test note added.",
