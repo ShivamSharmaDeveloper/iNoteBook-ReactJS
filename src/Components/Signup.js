@@ -26,10 +26,10 @@ const SignUp = (props) => {
       }), // body data type must match "Content-Type" header
     });
     const json = await response.json();
-    console.log(json);
+    // console.log(json);
     if (json.success) {
       // Save the authToken and redirect
-      localStorage.setItem("token", json.authtoken);
+      localStorage.setItem("token", json.authToken);
       navigate("/");
       props.showAlert("Account Created Successfully!", "success");
     } else {
@@ -41,9 +41,10 @@ const SignUp = (props) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
   return (
-    <div className="container my-3">
+    <div className="container mt-2">
+      <h2 className="my-3">Create an account to use iNotebook</h2>
       <form onSubmit={handelSubmit}>
-        <div className="mb-3">
+        <div className="my-3">
           <label htmlFor="name" className="form-label">
             Name
           </label>

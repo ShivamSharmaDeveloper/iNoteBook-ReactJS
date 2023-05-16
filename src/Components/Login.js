@@ -19,12 +19,12 @@ const Login = (props) => {
       }), // body data type must match "Content-Type" header
     });
     const json = await response.json();
-    console.log(json);
+    // console.log(json);
     if (json.success) {
       // Save the authToken and redirect
-      localStorage.setItem("token", json.authtoken);
-      navigate("/");
+      localStorage.setItem("token", json.authToken);
       props.showAlert("Logged In Successfully!", "success");
+      navigate("/");
     } else {
       props.showAlert("Invalid credentials!", "danger");
     }
@@ -35,9 +35,10 @@ const Login = (props) => {
   };
 
   return (
-    <div className="container my-3">
+    <div className="container mt-3">
+      <h2 className="my-3">Login to continue to iNotebook</h2>
       <form onSubmit={handelSubmit}>
-        <div className="mb-3">
+        <div className="my-3">
           <label htmlFor="email" className="form-label">
             Email address
           </label>
