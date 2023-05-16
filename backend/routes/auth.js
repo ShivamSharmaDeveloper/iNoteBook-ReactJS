@@ -20,8 +20,9 @@ router.post(
   async (req, res) => {
     // If there are errors, return bad request and the errors
     const errors = validationResult(req);
+    let success = false;
     if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
+      return res.status(400).json({ success, errors: errors.array() });
     }
     try {
       // Check whether the user with this email exists already
@@ -30,7 +31,10 @@ router.post(
       if (user) {
         return res
           .status(400)
-          .json({ error: "Sorry a user with this email already exists." });
+          .json({
+            success,
+            error: "Sorry a user with this email already exists.",
+          });
       }
       const salt = await bcrypt.genSalt(10);
       const secPass = await bcrypt.hash(req.body.password, salt);
@@ -53,10 +57,11 @@ router.post(
       //   res.json({ error: "Please enter a unique email!" });
       // });
       // res.json(user);
-      res.json({ authToken });
+      success = true;
+      res.json({ success, authToken });
     } catch (error) {
       console.error(error.message);
-      res.status(500).send("Some Error occured!");
+      res.status(500).send("Internal Server Error!");
     }
   }
 );
@@ -81,7 +86,10 @@ router.post(
       if (!user) {
         return res
           .status(400)
-          .json({ error: "Please try to login with correct credentials." });
+          .json({
+            success,
+            error: "Please try to login with correct credentials.",
+          });
       }
 
       const passwordCompare = await bcrypt.compare(password, user.password);
